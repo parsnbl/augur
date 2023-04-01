@@ -1,13 +1,13 @@
 import typer
 from cli import console, icon, print
-import resources
+import augur
 import random
 
 app = typer.Typer()
 
 @app.command()
 def main(question: str):
-    answers = resources.positive + resources.negative + resources.ambiguous
+    answers = augur.positive + augur.negative + augur.ambiguous
     resp = random.choice(answers)
     print(f'{icon}  {resp}')
 
